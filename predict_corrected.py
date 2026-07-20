@@ -8,7 +8,7 @@
 import subprocess, re, sys, os
 
 ENGINE = os.path.expanduser("~/.workbuddy/skills/world-cup-predict/wcpredict.py")
-PYTHON = "C:/Users/Kaius/.workbuddy/binaries/python/versions/3.13.12/python.exe"
+PYTHON = "python3"
 
 CONFEDERATIONS = {
     "Spain":"UEFA","Germany":"UEFA","France":"UEFA","England":"UEFA",
