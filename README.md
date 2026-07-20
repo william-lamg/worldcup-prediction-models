@@ -32,25 +32,21 @@
 - **日期**: 世界盃開賽前
 - **核心**: Elo + 自寫泊松分佈
 - **問題**: 方向命中率 ~50%
-- **下載**: 未保留
 
 ### V2 — 改進泊松（已廢棄，未保留）
 - **核心**: 改進泊松參數
 - **問題**: 依然 ~50%
-- **下載**: 未保留
 
 ### V3 — world-cup-predict 引擎（已廢棄）
 - **日期**: 6月12日
 - **核心**: GitHub 開源引擎 Elo + Dixon-Coles + 蒙特卡洛
 - **來源**: https://github.com/ML-KevinHe/world-cup-predict
 - **問題**: Confederation Bias（洲份偏誤）
-- **下載**: 外部引擎
 
 ### V3.5 — 校正層（已廢棄）
 - **日期**: 6月15日
 - **核心**: 自動識別洲份對戰組合，校正歐洲/非洲偏差
 - **問題**: 治標唔治本
-- **下載**: 未保留
 
 ### V4 — 市場賠率引擎（✅ 可使用）
 - **日期**: 6月15日
@@ -58,7 +54,6 @@
 - **優點**: 冇洲份偏誤，28場方向命中率~75%
 - **用法**: `python predict_v4.py odds "阿根廷" "法國" 2.50 3.20 2.80`
 - **檔案**: `predict_v4.py`
-- **下載**: `curl -O https://raw.githubusercontent.com/william-lamg/worldcup-prediction-models/main/predict_v4.py`
 
 ### V4.5 — 競彩整合版（✅ 可使用）
 - **日期**: 6月21日
@@ -72,7 +67,6 @@
 - **來源**: Dixon-Coles (1997) 低比分修正模型
 - **用法**: `python predict_v5.py "巴西" "日本" 1.65 3.60 5.00 --knockout`
 - **檔案**: `predict_v5.py`
-- **下載**: `curl -O https://raw.githubusercontent.com/william-lamg/worldcup-prediction-models/main/predict_v5.py`
 
 ### V5+ — 強化版（✅ 可使用）
 - **日期**: 7月3日
@@ -80,7 +74,6 @@
 - **新增**: 淘汰賽完整路徑分析（90分鐘→加時→12碼）
 - **用法**: `python predict_v5_plus.py 巴西 日本 1.65 3.60 5.00`
 - **檔案**: `predict_v5_plus.py`
-- **下載**: `curl -O https://raw.githubusercontent.com/william-lamg/worldcup-prediction-models/main/predict_v5_plus.py`
 
 ### V5.5 — 強化版（✅ 可使用）
 - **日期**: 7月6日
@@ -92,7 +85,6 @@
   - ⚽ 淘汰賽大小球修正（大2.5 -5%）
 - **用法**: `python predict_v55.py "葡萄牙" "西班牙" 2.80 3.10 2.50`
 - **檔案**: `predict_v55.py`
-- **下載**: `curl -O https://raw.githubusercontent.com/william-lamg/worldcup-prediction-models/main/predict_v55.py`
 
 ### V5.6 — 強化版（✅ 可使用）
 - **日期**: 7月12日
@@ -106,7 +98,6 @@
   - 🔴 ≥60%嚴格推薦門檻
 - **用法**: `python predict_v56.py "法國" "西班牙" 2.10 3.20 3.40 --cards`
 - **檔案**: `predict_v56.py`
-- **下載**: `curl -O https://raw.githubusercontent.com/william-lamg/worldcup-prediction-models/main/predict_v56.py`
 
 ### V6.0 — H2H 歷史版（✅ 可使用）
 - **日期**: 7月15日
@@ -118,7 +109,6 @@
   - 🔄 自動 H2H 調整因子
 - **用法**: `python predict_v6.py "法國" "西班牙" 2.10 3.20 3.40`
 - **檔案**: `predict_v6.py`
-- **下載**: `curl -O https://raw.githubusercontent.com/william-lamg/worldcup-prediction-models/main/predict_v6.py`
 
 ### V6.1 — 三重集成引擎（✅ 可使用）
 - **日期**: 7月15-16日
@@ -131,7 +121,6 @@
   - ⭐ Elo 排行榜（`python predict_v61.py elo`）
 - **用法**: `python predict_v61.py "英格蘭" "阿根廷" 2.30 3.20 3.10 --cards --final`
 - **檔案**: `predict_v61.py`
-- **下載**: `curl -O https://raw.githubusercontent.com/william-lamg/worldcup-prediction-models/main/predict_v61.py`
 
 ### V6.1.1 — 賽前情報恢復
 - **日期**: 7月15日
@@ -162,7 +151,6 @@
   python predict_v7.py "隊A" "隊B" 主賠 和賠 客賠
   ```
 - **檔案**: `predict_v7.py`
-- **下載**: `curl -O https://raw.githubusercontent.com/william-lamg/worldcup-prediction-models/main/predict_v7.py`
 
 ## 效能統計
 
