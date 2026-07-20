@@ -20,7 +20,7 @@
 | [V5+](#v5--強化版) | ✅ 可使用 | `predict_v5_plus.py` | 加時/12碼 | 7/3 |
 | [V5.5](#v55--強化版-1) | ✅ 可使用 | `predict_v55.py` | 巨星/高原/心理 | 7/6 |
 | [V5.6](#v56--強化版-1) | ✅ 可使用 | `predict_v56.py` | 紅黃牌/傷病/Brier | 7/12 |
-| [V6.0](#v60--h2h-歷史版) | ✅ 可使用 | `predict_v6.py`（本地） | H2H 歷史數據 | 7/15 |
+| [V6.0](#v60--h2h-歷史版) | ✅ 可使用 | `predict_v6.py` | H2H 歷史數據 | 7/15 |
 | [V6.1](#v61--三重集成引擎) | ✅ 可使用 | `predict_v61.py` | Elo+MC+市場三重 | 7/15 |
 | [V7.0](#v70--戰後重建版) | ✅ **最新** | `predict_v7.py` | 防守體系/決賽模式 | 7/20 |
 
@@ -108,7 +108,7 @@
 - **檔案**: `predict_v56.py`
 - **下載**: `curl -O https://raw.githubusercontent.com/william-lamg/worldcup-prediction-models/main/predict_v56.py`
 
-### V6.0 — H2H 歷史版（✅ 可使用，本地）
+### V6.0 — H2H 歷史版（✅ 可使用）
 - **日期**: 7月15日
 - **核心**: V5.6 + 世界盃歷史交鋒數據
 - **新增**:
@@ -117,7 +117,8 @@
   - 🌐 中英文隊名自動映射
   - 🔄 自動 H2H 調整因子
 - **用法**: `python predict_v6.py "法國" "西班牙" 2.10 3.20 3.40`
-- **檔案**: `predict_v6.py`（本地，未上傳）
+- **檔案**: `predict_v6.py`
+- **下載**: `curl -O https://raw.githubusercontent.com/william-lamg/worldcup-prediction-models/main/predict_v6.py`
 
 ### V6.1 — 三重集成引擎（✅ 可使用）
 - **日期**: 7月15-16日
