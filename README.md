@@ -1,54 +1,88 @@
-# 世界盃預測模型 World Cup Prediction Model
+# 🏆 世界盃預測模型 V1 → V7.0 完整進化
 
-從 V1 到 V7.0 嘅完整進化歷程。2026 美加墨世界盃全程覆盤。
+> 2026 美加墨世界盃全程實戰覆盤 | 52 場比賽 | 12 個版本迭代
+
+從初始泊松到三重集成引擎，48 日嘅模型進化之路。
+
+---
+
+## 📦 版本一覽（點擊跳轉）
+
+| 版本 | 狀態 | 下載 | 核心 | 日期 |
+|:---|:---:|:---|:---|---:|
+| [V1](#v1--初始泊松模型) | ❌ 廢棄 | `predict_v1.py`（未保留） | Elo + 泊松 | 賽前 |
+| [V2](#v2--改進泊松) | ❌ 廢棄 | `predict_v2.py`（未保留） | 改進泊松 | 賽前 |
+| [V3](#v3--world-cup-predict-引擎) | ❌ 廢棄 | 外部引擎 | Elo + Dixon-Coles + MC | 6/12 |
+| [V3.5](#v35--校正層) | ❌ 廢棄 | 未保留 | 洲份校正 | 6/15 |
+| [V4](#v4--市場賠率引擎) | ✅ 可使用 | `predict_v4.py` | 市場賠率 + 泊松 | 6/15 |
+| [V4.5](#v45--競彩整合版) | ✅ 可使用 | — | V4 + 競彩賠率 | 6/21 |
+| [V5](#v5--dixon-coles--淘汰賽) | ✅ 可使用 | `predict_v5.py` | Dixon-Coles + 淘汰賽 | 6/28 |
+| [V5+](#v5--強化版) | ✅ 可使用 | `predict_v5_plus.py` | 加時/12碼 | 7/3 |
+| [V5.5](#v55--強化版-1) | ✅ 可使用 | `predict_v55.py` | 巨星/高原/心理 | 7/6 |
+| [V5.6](#v56--強化版-1) | ✅ 可使用 | `predict_v56.py` | 紅黃牌/傷病/Brier | 7/12 |
+| [V6.0](#v60--h2h-歷史版) | ✅ 可使用 | `predict_v6.py`（本地） | H2H 歷史數據 | 7/15 |
+| [V6.1](#v61--三重集成引擎) | ✅ 可使用 | `predict_v61.py` | Elo+MC+市場三重 | 7/15 |
+| [V7.0](#v70--戰後重建版) | ✅ **最新** | `predict_v7.py` | 防守體系/決賽模式 | 7/20 |
+
+---
 
 ## 模型版本演進
 
-### V1 — 初始泊松模型（已廢棄）
+### V1 — 初始泊松模型（已廢棄，未保留）
 - **日期**: 世界盃開賽前
 - **核心**: Elo + 自寫泊松分佈
 - **問題**: 方向命中率 ~50%
+- **下載**: 未保留
 
-### V2 — 改進泊松版本（已廢棄）
+### V2 — 改進泊松（已廢棄，未保留）
 - **核心**: 改進泊松參數
 - **問題**: 依然 ~50%
+- **下載**: 未保留
 
 ### V3 — world-cup-predict 引擎（已廢棄）
 - **日期**: 6月12日
 - **核心**: GitHub 開源引擎 Elo + Dixon-Coles + 蒙特卡洛
 - **來源**: https://github.com/ML-KevinHe/world-cup-predict
 - **問題**: Confederation Bias（洲份偏誤）
+- **下載**: 外部引擎
 
 ### V3.5 — 校正層（已廢棄）
 - **日期**: 6月15日
 - **核心**: 自動識別洲份對戰組合，校正歐洲/非洲偏差
 - **問題**: 治標唔治本
+- **下載**: 未保留
 
-### V4 — 市場賠率引擎（現行）
+### V4 — 市場賠率引擎（✅ 可使用）
 - **日期**: 6月15日
 - **核心**: 直接用 Bet365 賠率反推概率，泊松分佈生成比分
 - **優點**: 冇洲份偏誤，28場方向命中率~75%
+- **用法**: `python predict_v4.py odds "阿根廷" "法國" 2.50 3.20 2.80`
 - **檔案**: `predict_v4.py`
+- **下載**: `curl -O https://raw.githubusercontent.com/william-lamg/worldcup-prediction-models/main/predict_v4.py`
 
-### V4.5 — 競彩整合版
+### V4.5 — 競彩整合版（✅ 可使用）
 - **日期**: 6月21日
 - **核心**: V4 + 競彩即時賠率 + 價值判斷
 - **信心分級**: 🟢 ≥80% / 🟡 50-79% / 🔴 <50%
 
-### V5 — Dixon-Coles + 淘汰賽調整（現行）
+### V5 — Dixon-Coles + 淘汰賽調整（✅ 可使用）
 - **日期**: 6月28日
 - **核心**: 市場賠率 → Dixon-Coles 低比分修正 → 淘汰賽和波調整
 - **新增**: 高原主場因子（--altitude）、淘汰賽模式（--knockout）
 - **來源**: Dixon-Coles (1997) 低比分修正模型
+- **用法**: `python predict_v5.py "巴西" "日本" 1.65 3.60 5.00 --knockout`
 - **檔案**: `predict_v5.py`
+- **下載**: `curl -O https://raw.githubusercontent.com/william-lamg/worldcup-prediction-models/main/predict_v5.py`
 
-### V5+ — 強化版（現行）
+### V5+ — 強化版（✅ 可使用）
 - **日期**: 7月3日
 - **核心**: V5 + 加時/12碼概率 + 總入球分佈
 - **新增**: 淘汰賽完整路徑分析（90分鐘→加時→12碼）
+- **用法**: `python predict_v5_plus.py 巴西 日本 1.65 3.60 5.00`
 - **檔案**: `predict_v5_plus.py`
+- **下載**: `curl -O https://raw.githubusercontent.com/william-lamg/worldcup-prediction-models/main/predict_v5_plus.py`
 
-### V5.5 — 強化版
+### V5.5 — 強化版（✅ 可使用）
 - **日期**: 7月6日
 - **核心**: V5+ 全面強化
 - **新增**:
@@ -56,9 +90,11 @@
   - 🏔️ 高原調整減半（5% → 2.5%）
   - 🧠 心理因子（強隊信心折讓 -3%）
   - ⚽ 淘汰賽大小球修正（大2.5 -5%）
+- **用法**: `python predict_v55.py "葡萄牙" "西班牙" 2.80 3.10 2.50`
 - **檔案**: `predict_v55.py`
+- **下載**: `curl -O https://raw.githubusercontent.com/william-lamg/worldcup-prediction-models/main/predict_v55.py`
 
-### V5.6 — 強化版
+### V5.6 — 強化版（✅ 可使用）
 - **日期**: 7月12日
 - **核心**: V5.5 + 紅黃牌預測 + 嚴格推薦門檻
 - **新增**:
@@ -68,9 +104,11 @@
   - 😴 疲勞因子（--rest）
   - 📊 Brier Score 監控
   - 🔴 ≥60%嚴格推薦門檻
+- **用法**: `python predict_v56.py "法國" "西班牙" 2.10 3.20 3.40 --cards`
 - **檔案**: `predict_v56.py`
+- **下載**: `curl -O https://raw.githubusercontent.com/william-lamg/worldcup-prediction-models/main/predict_v56.py`
 
-### V6.0 — H2H 歷史版
+### V6.0 — H2H 歷史版（✅ 可使用，本地）
 - **日期**: 7月15日
 - **核心**: V5.6 + 世界盃歷史交鋒數據
 - **新增**:
@@ -78,9 +116,10 @@
   - 📈 近期狀態因子（近10場戰績）
   - 🌐 中英文隊名自動映射
   - 🔄 自動 H2H 調整因子
-- **檔案**: `predict_v6.py`
+- **用法**: `python predict_v6.py "法國" "西班牙" 2.10 3.20 3.40`
+- **檔案**: `predict_v6.py`（本地，未上傳）
 
-### V6.1 — 三重集成引擎
+### V6.1 — 三重集成引擎（✅ 可使用）
 - **日期**: 7月15-16日
 - **核心**: 市場賠率 + Elo + 蒙特卡洛 三重集成
 - **新增**:
@@ -88,8 +127,10 @@
   - ✅ 蒙特卡洛模擬回歸（V3 功能恢復）
   - 🔍 三引擎對比輸出
   - 🏆 2串1競彩推薦恢復
-  - ⭐ Elo 排行榜（python predict_v61.py elo）
+  - ⭐ Elo 排行榜（`python predict_v61.py elo`）
+- **用法**: `python predict_v61.py "英格蘭" "阿根廷" 2.30 3.20 3.10 --cards --final`
 - **檔案**: `predict_v61.py`
+- **下載**: `curl -O https://raw.githubusercontent.com/william-lamg/worldcup-prediction-models/main/predict_v61.py`
 
 ### V6.1.1 — 賽前情報恢復
 - **日期**: 7月15日
@@ -97,18 +138,30 @@
 - **新增**:
   - ✅ 賽前情報檢查恢復（傷病/停賽/陣容）
   - 🏥 更精細傷病情況注入（WebSearch → --inj）
-- **檔案**: 更新 Automation prompt
+- **更新**: Automation prompt
 
-### V7.0 — 戰後重建版 🆕
+### V7.0 — 戰後重建版（🆕 最新，✅ 推薦使用）
 - **日期**: 7月20日
 - **核心**: 基於52場完整覆盤嘅5大改進
 - **改進**:
-  - 🏆 決賽壓力模式（--final）：防守型球隊 +8%，市場權重降為35%
-  - 🥉 季軍戰開放模式（--third）：雙方 +15% xG（開放比賽）
+  - 🏆 決賽壓力模式（`--final`）：防守型球隊 +8%，市場權重降為35%
+  - 🥉 季軍戰開放模式（`--third`）：雙方 +15% xG（開放比賽）
   - 🛡️ 防守體系因子（西班牙7場失1球自動加成）
   - 📊 Elo 回溯至2010世界盃（4屆數據）
   - ⚖️ 獨立權重：決賽/季軍戰市場權重由50%降至35%
+- **用法**:
+  ```bash
+  # 決賽預測
+  python predict_v7.py "西班牙" "阿根廷" 2.80 3.10 2.50 --final --exp_a 0.85 --exp_b 0.95
+  
+  # 季軍戰預測
+  python predict_v7.py "英格蘭" "法國" 3.50 3.40 2.00 --third
+  
+  # 普通淘汰賽
+  python predict_v7.py "隊A" "隊B" 主賠 和賠 客賠
+  ```
 - **檔案**: `predict_v7.py`
+- **下載**: `curl -O https://raw.githubusercontent.com/william-lamg/worldcup-prediction-models/main/predict_v7.py`
 
 ## 效能統計
 
