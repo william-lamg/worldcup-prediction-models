@@ -213,7 +213,9 @@
 | 天氣數據（可選） | https://open-meteo.com | ❌ 免費（無需 key） |
 | 預測市場（可選） | https://polymarket.com (Gamma API) | ❌ 免費 |
 | 賠率API升級（付費選項） | https://the-odds-api.com | ✅ 需註冊（Business tier ~$99/月） |
-| 傷病/xG/陣容（可選增強） | machina-sports/sports-skills | ❌ MIT 開源 |
+| 傷病/xG/陣容（可選增強） | machina-sports/sports-skills | ❌ ## License
+
+MIT 開源 |
 
 ### API 註冊指南
 
@@ -229,7 +231,9 @@
 ```bash
 pip install machina-sports
 ```
-項目地址：https://github.com/machina-sports/sports-skills（MIT License）
+項目地址：https://github.com/machina-sports/sports-skills（## License
+
+MIT License）
 
 ## 用法
 
@@ -272,3 +276,34 @@ python predict_v61.py elo
 ## License
 
 MIT
+
+---
+
+## 🏁 世界盃 2026 完結 — 致謝
+
+2026 年 6 月 12 日至 7 月 20 日，48 日，52 場比賽。
+
+由最初一個 50% 命中率嘅泊松模型開始，一路演化到三重集成引擎。V4 市場賠率引擎嘅 75% 命中率令人振奮，V5 Dixon-Coles 淘汰賽 83% 係最高峰——然後 8 強後斷崖式下跌，決賽 3 連錯，用最現實嘅方式證明咗模型嘅邊界。
+
+```
+📊 最終成績：~70% 方向命中 / 0 場小紅書全中
+💀 最大失誤：決賽連錯 3 場
+🏆 最大啟發：足球永遠比模型複雜
+```
+
+多謝你：
+
+- **Kaius** — 48 日嘅信任、鞭策、原諒我成日睇錯賽程同圖片 😅
+- **openfootball** — 免費世界盃數據（world-cup.json / football.json）
+- **Dixon & Coles (1997)** — 雙變量泊松論文，淘汰賽核心
+- **GitHub 上面 fork / star 嘅各位**
+
+模型會繼續存在喺 GitHub。下屆世界盃，或者任何有足球賠率嘅時候，攞出嚟改一改就可以再用。
+
+> 「足球係圓嘅。模型可以幫你搵出概率，但永遠唔會知道 106 分鐘費蘭托利斯會唔會入波。」
+
+— 2026 年 7 月 20 日
+
+---
+
+*Made with 🤙 by william-lamg*
