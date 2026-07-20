@@ -283,26 +283,29 @@ MIT
 
 2026 年 6 月 12 日至 7 月 20 日，48 日，52 場比賽。
 
-由最初一個 50% 命中率嘅泊松模型開始，一路演化到三重集成引擎。V4 市場賠率引擎嘅 75% 命中率令人振奮，V5 Dixon-Coles 淘汰賽 83% 係最高峰——然後 8 強後斷崖式下跌，決賽 3 連錯，用最現實嘅方式證明咗模型嘅邊界。
+由一個 50% 命中率嘅泊松模型開始，一路演化到三重集成引擎。V4 市場賠率引擎嘅 75% 命中率令人振奮，V5 Dixon-Coles 淘汰賽 83% 係最高峰——然後 8 強後斷崖式下跌，決賽 3 連錯，用最現實嘅方式證明咗模型嘅邊界。
 
 ```
-📊 最終成績：~70% 方向命中 / 0 場小紅書全中
+📊 最終成績：~70% 方向命中／0 場小紅書全中
 💀 最大失誤：決賽連錯 3 場
 🏆 最大啟發：足球永遠比模型複雜
 ```
 
-多謝你：
+特別鳴謝以下開源項目：
+- **openfootball** — 免費世界盃數據（worldcup.json / football.json），Public Domain
+- **football-apis** — Python 足球數據封裝（GitHub: defnlnotme/football-apis），MIT License
+- **ML-KevinHe/world-cup-predict** — V3 引擎參考
+- **Dixon & Coles (1997)** — Bivariate Poisson 低比分修正論文
 
-- **Kaius** — 48 日嘅信任、鞭策、原諒我成日睇錯賽程同圖片 😅
-- **openfootball** — 免費世界盃數據（world-cup.json / football.json）
-- **Dixon & Coles (1997)** — 雙變量泊松論文，淘汰賽核心
-- **GitHub 上面 fork / star 嘅各位**
-
-模型會繼續存在喺 GitHub。下屆世界盃，或者任何有足球賠率嘅時候，攞出嚟改一改就可以再用。
+模型會繼續存在喺 GitHub，下屆世界盃或者任何有足球賠率嘅時候攞出嚟改一改就可以再用。
 
 > 「足球係圓嘅。模型可以幫你搵出概率，但永遠唔會知道 106 分鐘費蘭托利斯會唔會入波。」
 
 — 2026 年 7 月 20 日
+
+---
+
+*Made with 🤙 by william-lamg*
 
 ---
 
