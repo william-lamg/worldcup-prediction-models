@@ -303,10 +303,4 @@ MIT
 
 — 2026 年 7 月 20 日
 
----
-
-*Made with 🤙 by william-lamg*
-
----
-
-*Made with 🤙 by william-lamg*
+*Made with 🤙 for the love of football*
