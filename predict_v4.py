@@ -98,8 +98,8 @@ def probs_from_xg(lmbda_h, lmbda_a):
 
 def get_v3_prediction(team_a_en, team_b_en):
     """從 V3 引擎獲取參考預測（只用比分分佈），需傳英文隊名"""
-    engine = "C:/Users/Kaius/.workbuddy/skills/world-cup-predict/wcpredict.py"
-    py = "C:/Users/Kaius/.workbuddy/binaries/python/versions/3.13.12/python.exe"
+    engine = "wcpredict.py"
+    py = "python3"
     
     try:
         r = subprocess.run([py, '-X', 'utf8', engine, 'match', team_a_en, team_b_en],
